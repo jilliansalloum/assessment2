@@ -35,7 +35,9 @@ const cart = [
 
 //CODE HERE
 
-const summedPrice = cart.reduce(price, totalPrice) => 
+const summedPrice = cart.reduce(
+    (price, totalPrice) => price + totalPrice
+)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +56,14 @@ const summedPrice = cart.reduce(price, totalPrice) =>
 */
 
 //CODE HERE
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    let finalPrice = 0
+    finalPrice += cartTotal
+    finalPrice += (cartTotal * tax)
+    finalPrice -= couponValue
+    return finalPrice
+}
+console.log(calcFinalPrice(20,5,0.06))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,7 +88,9 @@ const summedPrice = cart.reduce(price, totalPrice) =>
 
 /*
     TEXT ANSWER HERE
-
+    the object named customers will recieve arguments first name, last name, birthday month,  and age
+the first name, last name and birthday month will be strings, and the age will be a number
+i chose those data types so you can organize by last name to find multiple people in the same family, and so that you can see people with upcoming birthdays, and ages to see how old they are turning. in case the restaurant wants to send an email coupon or invite. 
 */
 
 /*
@@ -88,3 +99,11 @@ const summedPrice = cart.reduce(price, totalPrice) =>
 */
 
 //CODE HERE
+class Customers {
+    constructor(firstName, lastName, age, birthdayMonth){
+        this.firstName = firstName,
+        this.lastName = lastName,
+        this.age = age,
+        this.birthdayMonth = birthdayMonth
+    }
+}

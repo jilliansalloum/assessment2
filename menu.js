@@ -162,11 +162,15 @@ let foodArr = [
 //     }
 // 
 // const tags = ['']
+let searchElement = 'vegan'
+console.log( foodArr.filter( x => x.tags.includes(searchElement))) 
 
-const foodFilteredByTag = foodArr.filter( x => x.includes(tags))
+//console.log(foodFilteredByTag('vegan')) 
+
+// console.log(foodArr)
 
 
-console.log(foodFilteredByTag('vegan')) 
+
 
 
 
@@ -213,15 +217,50 @@ console.log(foodFilteredByTag('vegan'))
 */
 
 //CODE HERE
-filterByProperty(property, number, type) {
-    
-}
 
+// const filterByProperty = (property, number, type) => 
+// if (type === 'above'){
+//     return foodArr.filter(x => x[property])
+
+// type && foodArr.filter(
+//     x => x[property] >= [number]
+// )
+// (type === 'above') 
+//  && foodArr.filter(x => x[property] <= [number]) ||
+//  || foodArr.filter(x => x[property] >= [number])
+
+// console.log(filterByProperty('rating',5,true))
+
+// ) {
+//    if (type === 'above') {
+//     return n
+//    }
+// }
+
+const filterByProperty = ( prop, num, type ) => 
+    ( type === 'above' ) 
+        ? foodArr.filter( x => x[prop] >= num ) //if type === above
+        : foodArr.filter( x => x[prop] <= num ) //not if type ==above
+
+        
+        
+        // filterByProperty(property, number, type) {
+            //     if (number > property){
+                //         return 'above'
+                //     } else if(number<property) {
+                    //         return 'below'
+                    //         }
+                    //     let newArr = []
+                    // }
+                    
 /*
-    Invoke the `filterByProperty` function passing
-    in a value for each paramter.
-
-    You'll have to console.log to see the filtered array
+Invoke the `filterByProperty` function passing
+ in a value for each paramter.
+                    
+ You'll have to console.log to see the filtered array
 */
-
+                   
 //CODE HERE
+
+//filterByProperty()
+console.log( filterByProperty( 'rating', 8, 'below' ) )
